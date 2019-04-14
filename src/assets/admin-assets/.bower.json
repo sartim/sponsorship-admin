@@ -1,0 +1,13 @@
+{
+  "name": "admin-assets",
+  "homepage": "https://github.com/sartim/admin_assets",
+  "_release": "d9f2a942e5",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "d9f2a942e51c82d9cd8d6f20223109e27b726510"
+  },
+  "_source": "https://github.com/sartim/admin_assets.git",
+  "_target": "*",
+  "_originalSource": "admin-assets"
+}

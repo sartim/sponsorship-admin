@@ -1,0 +1,45 @@
+<div id="login-page" class="row">
+    <div class="col s12">
+        <div class="col s4 z-depth-4 card-panel">
+            <form class="login-form" name="form" (ngSubmit)="f.form.valid && add()" #f="ngForm" novalidate>
+                <div class="row margin">
+                    <label for="first_name">First Name</label>
+                    <div class="input-field col s12" [ngClass]="{ 'has-error': f.submitted && !first_name.valid }">
+                        <input type="text" id="first_name" name="first_name" [(ngModel)]="model.first_name" #first_name="ngModel" required>
+                        <div *ngIf="f.submitted && !first_name.valid" class="help-block">First Name is required</div>
+                    </div>
+                </div>
+                <div class="row margin">
+                    <label for="last_name">Last Name</label>
+                    <div class="input-field col s12" [ngClass]="{ 'has-error': f.submitted && !last_name.valid }">
+                        <input type="text" id="last_name" name="last_name" [(ngModel)]="model.last_name" #last_name="ngModel" required>
+                        <div *ngIf="f.submitted && !last_name.valid" class="help-block">Last Name is required</div>
+                    </div>
+                </div>
+                <p>&nbsp;</p>
+                <p>&nbsp;</p>
+                <p>&nbsp;</p>
+                <p>&nbsp;</p>
+                <!--<div class="row margin">-->
+                <!--<label>Date Of Birth</label>-->
+                <!--<ejs-datepicker id='datepicker' name="date_of_birth" placeholder='Select a date' [value]='child.date_of_birth | date: "dd/MM/yyyy"' [min]='minDate' [max]='maxDate' [(ngModel)]="child.date_of_birth" #date_of_birth="ngModel" required></ejs-datepicker>-->
+                <!--</div>-->
+                <!--<div class="row margin">-->
+                <!--<label>Gender</label>-->
+                <!--<select class="browser-default">-->
+                <!--<option value="1">Male</option>-->
+                <!--<option value="2">Female</option>-->
+                <!--<option value="3">Other</option>-->
+                <!--</select>-->
+                <!--</div>-->
+                <div class="row">
+                    <div class="input-field col s12">
+                        <button [disabled]="loading" class="btn darken-1 waves-effect waves-orange col s12">Save</button>
+                        <img *ngIf="loading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA=="/>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+

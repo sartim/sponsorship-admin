@@ -1,0 +1,40 @@
+<div id="login-page" class="row">
+    <div class="col s12">
+        <div class="col s4 z-depth-4 card-panel">
+            <form class="login-form" name="form" (ngSubmit)="f.form.valid && add()" #f="ngForm" novalidate>
+                <div class="row margin">
+                    <label for="child">Child</label>
+                    <div class="input-field col s12">
+                        <select id="child" [(ngModel)]="model.child" name="child" class="browser-default">
+                            <option value="" selected>Select a child</option>
+                            <option *ngFor="let child of children" [value]="child.id">{{child.first_name}} {{ child.last_name}}</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row margin">
+                    <label for="sponsor">Sponsor</label>
+                    <div class="input-field col s12">
+                        <select id="sponsor" [(ngModel)]="model.sponsor" name="sponsor" class="browser-default">
+                            <option value="" selected>Select a sponsor</option>
+                            <option *ngFor="let sponsor of sponsors" [value]="sponsor.id">{{sponsor.first_name}} {{ sponsor.last_name}}</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row margin">
+                    <label for="contribution">Contribution</label>
+                    <div class="input-field col s12" [ngClass]="{ 'has-error': f.submitted && !contribution.valid }">
+                        <input type="text" id="contribution" name="contribution" [(ngModel)]="model.contribution" #last_name="ngModel" required>
+                        <div *ngIf="f.submitted && !contribution.valid" class="help-block">Contribution is required</div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <button [disabled]="loading" class="btn darken-1 waves-effect waves-orange col s12">Save</button>
+                        <img *ngIf="loading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA=="/>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+

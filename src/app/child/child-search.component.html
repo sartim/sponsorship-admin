@@ -1,0 +1,33 @@
+<section id="content">
+    <div class="container">
+        <div class="section">
+            <div class="col s12">
+                <table class="responsive-table striped highlight" *ngIf="children">
+                    <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Date Of Birth</th>
+                        <th>Gender</th>
+                        <th>ACTION</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let child of children">
+                            <td>{{ child.id}}</td>
+                            <td>{{ child.first_name}}</td>
+                            <td>{{ child.last_name}}</td>
+                            <td>{{ child.date_of_birth}}</td>
+                            <td>{{ child.gender.name}}</td>
+                            <td>
+                                <button class="btn col 12" (click)="this.gotoDetail(child.id)"><i class="material-icons">edit</i></button>
+                                <button class="btn col 12 red"><i class="material-icons" (click)="this.delete"></i></button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>

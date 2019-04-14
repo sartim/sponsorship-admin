@@ -1,0 +1,17 @@
+{
+  "name": "sponsorship-admin",
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "homepage": "https://github.com/sartim/sponsorship-admin",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "admin-assets": "*"
+  }
+}

@@ -1,0 +1,5 @@
+{
+  "prodUrl": "https://sponsorship-api.herokuapp.com",
+  "devUrl": "https://sponsorship-api.herokuapp.com",
+  "childMonthlyContributionsUrl": "/api/child/monthly/contribution"
+}
