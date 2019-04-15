@@ -9,10 +9,10 @@
 
 **Demo URL**
 
-`https://angular-drf-admin.firebaseapp.com`
+https://sponsorship-admin.firebaseapp.com
 
 ###### Login Credentials
 
-username: `demo`
+username: `staff@mail.com`
 
-password: `qwertytrewq`
+password: `test`
