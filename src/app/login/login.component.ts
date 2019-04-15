@@ -18,7 +18,9 @@ export class LoginComponent implements OnInit {
         private route: ActivatedRoute,
         private router: Router,
         private authenticationService: AuthenticationService,
-        private alertService: AlertService) { }
+        private alertService: AlertService) {
+        localStorage.setItem('reload', 'true');
+    }
 
     ngOnInit() {
         this.initScript();

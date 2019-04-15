@@ -32,6 +32,10 @@ export class HomeComponent implements OnInit, OnDestroy {
     }
 
     ngAfterViewInit() {
+        if (localStorage.getItem('reload') === 'true') {
+            location.reload();
+            localStorage.setItem('reload', 'false');
+        }
         this.zone.runOutsideAngular(() => {
             const chart = am4core.create('chartdiv', am4charts.XYChart);
             chart.marginRight = 400;
@@ -104,7 +108,9 @@ export class HomeComponent implements OnInit, OnDestroy {
     }
 
     private getThisYearContributions() {
-        this.contributionsService.getByYear(2019)
+        const d = new Date();
+        const y = d.getFullYear();
+        this.contributionsService.getByYear(y)
             .subscribe(
                 thisYearContributions => {
                     this.thisYearContributions = thisYearContributions[0];
